@@ -1,0 +1,13 @@
+clear
+screen 101 101
+orthocamera
+sphere 100.1 0 0 -150 1 0 0 0 0 0
+					#sphere 20 50 50 -50 0 1 0 0 0 0
+					#sphere 100 100 0 -200 0 0 1 0 0 0
+triangle 0 0 -100 100.1 0 -100 50 100.1 -100 0 0 1 0 0 0
+box 20 20 -.1 60 60 -40 .5 .5 .5 0 0 0
+background 0 1 0
+clear
+sphere 100.1 0 0 -150 1 0 0 0 0 0
+trace
+
