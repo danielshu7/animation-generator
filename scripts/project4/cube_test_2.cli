@@ -1,4 +1,0 @@
-perspective 60 1 3.5 10000
-translate 0 0 -4
-read cube.cli
-
