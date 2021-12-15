@@ -1,0 +1,9 @@
+clear
+screen 101 101
+orthocamera
+sphere 100.1 0 0 -150 .05 .05 .05 .7 .2 .7
+triangle 0 0 -100 100.1 0 -100 50 100.1 -100 .05 .05 .05 .9 .9 0
+ilight .75 0.0 .75 0 -1 0
+ilight .8 .8 .8 -1 -1 1
+ilight .75 0.75 0 0 0 -1
+trace

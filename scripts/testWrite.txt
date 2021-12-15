@@ -1,0 +1,6 @@
+# check tiffWrite on drawing
+read rot.cli
+tiffwrite test.tif
+reset
+tiffread test.tif
+

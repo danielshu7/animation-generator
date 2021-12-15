@@ -1,0 +1,15 @@
+FROM ubuntu:latest
+#
+# Now install the needed python packages
+RUN apt-get -y update && apt-get install -y net-tools python3 gcc g++
+RUN apt-get install -y python3-dev python3-pip
+RUN apt-get install -y libglu1-mesa-dev freeglut3-dev mesa-common-dev
+RUN python3 -m pip install --upgrade pip
+RUN pip3 install kafka-python
+RUN pip3 install Pillow
+RUN mkdir scripts
+RUN mkdir images
+
+#
+# Next, copy our consumer code into container image
+ADD copy /
