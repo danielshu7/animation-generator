@@ -9,5 +9,5 @@ RUN pip3 install Pillow
 RUN mkdir gifs
 
 #
-# Next, copy our consumer code into container image
+# Next, copy our compiler code into container image
 COPY images_to_gif.py /

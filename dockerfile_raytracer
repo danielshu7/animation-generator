@@ -11,5 +11,5 @@ RUN mkdir scripts
 RUN mkdir images
 
 #
-# Next, copy our consumer code into container image
-ADD copy /
+# copy raytracing code + extra files for worker
+ADD raytracer_files /
