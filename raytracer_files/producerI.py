@@ -1,15 +1,15 @@
+## opens the image and sends to Kafka
+
 import io
 import time # for sleep
 import sys
 from kafka import KafkaProducer  # producer of events
 from PIL import Image
 
-# We can make this more sophisticated/elegant but for now it is just
-# hardcoded to the setup I have on my local VMs
 
 # acquire the producer
 # (you will need to change this to your bootstrap server's IP addr)
-producer = KafkaProducer (bootstrap_servers="129.114.25.94:30000",
+producer = KafkaProducer (bootstrap_servers="129.114.25.94:30000", 
                                           acks=1)  # wait for leader to write to log
 
 def read_image():
@@ -38,3 +38,10 @@ print("Image sent")
 
 # we are done
 producer.close ()
+    
+
+
+
+
+
+

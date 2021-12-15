@@ -1,15 +1,4 @@
-#
-#
-# Author: Aniruddha Gokhale
-# CS4287-5287: Principles of Cloud Computing, Vanderbilt University
-#
-# Created: Sept 6, 2020
-#
-# Purpose:
-#
-#    Demonstrate the use of Kafka Python streaming APIs.
-#    In this example, demonstrate Kafka streaming API to build a consumer.
-#
+## receives images from Kafka, compiles into gif, and sends back to Kafka
 
 import io
 import time # for sleep
@@ -17,8 +6,7 @@ from kafka import KafkaConsumer  # consumer of events
 from kafka import KafkaProducer
 from PIL import Image
 
-# We can make this more sophisticated/elegant but for now it is just
-# hardcoded to the setup I have on my local VMs
+
 
 # acquire the consumer
 # (you will need to change this to your bootstrap server's IP addr)
@@ -53,9 +41,9 @@ while True:
     for pair in unsorted_frames:
         frames.append(pair[1])
 
-    # start gif part
+    # start gif compiling
     if frames:
-        print("Combining to gif")
+        print("Compiling into gif")
         producer = KafkaProducer (bootstrap_servers="129.114.25.94:30000", 
                                                   acks=1)  # wait for leader to write to log
 

@@ -1,15 +1,4 @@
-#
-#
-# Author: Aniruddha Gokhale
-# CS4287-5287: Principles of Cloud Computing, Vanderbilt University
-#
-# Created: Sept 6, 2020
-#
-# Purpose:
-#
-#    Demonstrate the use of Kafka Python streaming APIs.
-#    In this example, demonstrate Kafka streaming API to build a consumer.
-#
+## receives images from Kafka and compiles into gif (locally)
 
 import io
 import time # for sleep
@@ -36,11 +25,11 @@ while True:
     
         retrieved_msg = msg.value
         frame_number = retrieved_msg[-1]
-        print(frame_number)
+        print("Frame:", frame_number)
         image = Image.open(io.BytesIO(retrieved_msg[:-1]))
         unsorted_frames.append((frame_number, image))
         
-        print(time.time() - program_start_time)
+        print("Running time:", time.time() - program_start_time, "seconds")
 
     consumer.close ()
     

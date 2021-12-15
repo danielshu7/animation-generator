@@ -1,18 +1,4 @@
-#
-#
-# Author: Aniruddha Gokhale
-# CS4287-5287: Principles of Cloud Computing, Vanderbilt University
-#
-# Created: Sept 6, 2020
-#
-# Purpose:
-#
-#    Demonstrate the use of Kafka Python streaming APIs.
-#    In this example, we use the "top" command and use it as producer of events for
-#    Kafka. The consumer can be another Python program that reads and dumps the
-#    information into a database OR just keeps displaying the incoming events on the
-#    command line consumer (or consumers)
-#
+## Sends all scripts from specified folder to Kafka
 
 import glob
 import os   # need this for popen
@@ -20,8 +6,7 @@ import time # for sleep
 import sys
 from kafka import KafkaProducer  # producer of events
 
-# We can make this more sophisticated/elegant but for now it is just
-# hardcoded to the setup I have on my local VMs
+
 
 # acquire the producer
 # (you will need to change this to your bootstrap server's IP addr)
