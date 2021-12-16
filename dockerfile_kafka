@@ -1,0 +1,13 @@
+# First, use the latest ubuntu image, which points to the
+# latest LTS image, currently 20.04LTS
+FROM ubuntu:latest
+
+#
+# Now install the needed python packages
+RUN apt-get -y update && apt-get install -y curl apt-transport-https gnupg gcc
+RUN apt-get install -y default-jdk
+RUN mkdir /Downloads
+RUN curl "https://downloads.apache.org/kafka/2.6.2/kafka_2.13-2.6.2.tgz" -o /Downloads/kafka.tgz
+RUN mkdir /kafka
+RUN cd /kafka && tar -xvzf /Downloads/kafka.tgz --strip 1
+
