@@ -1,6 +1,6 @@
 # Cloud-Based Ray Tracing Animation Generator
 
-## Abstract
+## Introduction
 Ray tracing is a graphics rendering technique that is powerful but has historically been extremely time and computationally expensive. Until very recent times, other techniques have been more popular for applications that require quick responses (such as real-time graphics). Cloud technologies have the capability to provide us the resources to overcome some of the speed limitations of traditional ray tracing. We have developed an application that utilizes this combination of technologies to quickly and accurately generate animated images.
 
 ## Directories
