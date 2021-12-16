@@ -1,0 +1,19 @@
+---
+  - name: Delete VMs
+    hosts: MyLocalVMs
+    remote_user: cc
+    collections:
+      - openstack.cloud
+
+    tasks:
+    - openstack.cloud.server:
+           cloud: openstack
+           name: team6_ansibleVM2
+           state: absent
+           timeout: 6000
+
+    - openstack.cloud.server:
+           cloud: openstack
+           name: team6_ansibleVM3
+           state: absent
+           timeout: 6000

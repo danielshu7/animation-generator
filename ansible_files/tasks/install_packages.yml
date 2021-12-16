@@ -1,0 +1,15 @@
+---
+  - name: Updating APT
+    apt:
+         update_cache: yes
+
+  - name: Installing Python, Java
+    apt:
+         name: "{{ packages }}"
+         state: present
+    vars:
+         packages:
+           - python3.8
+           - default-jdk
+
+...

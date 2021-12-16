@@ -1,0 +1,18 @@
+---
+  - name: Adding ufw rules
+    command: "{{ item }}"
+    with_items:
+      - ufw limit 9092/tcp
+      - ufw limit 2181/tcp
+      - ufw limit 2379:2380/tcp
+      - ufw limit 6443/tcp
+      - ufw limit 10250:10252/tcp
+      - ufw limit 8285/udp
+      - ufw limit 8472/udp
+      - ufw limit 5000/tcp
+      - ufw limit 30000:30004/tcp
+      - ufw limit 30005/tcp
+      - ufw limit 30006/tcp
+
+
+...
