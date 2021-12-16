@@ -62,7 +62,5 @@
     tasks:
     - include_tasks: kuberenetes_docker_tasks/deployments.yml
       when: inventory_hostname == ansible_play_hosts[1]
-    - include_tasks: kuberenetes_docker_tasks/start_consumer.yml
-      when: inventory_hostname == ansible_play_hosts[1]
   
 ...

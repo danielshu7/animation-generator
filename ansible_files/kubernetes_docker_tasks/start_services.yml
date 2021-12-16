@@ -1,14 +1,12 @@
 ---
   - name: Start zookeeper service
-    shell: kubectl apply -f /home/cc/CS4287-A3/zookeeper_svc.yaml
+    shell: kubectl apply -f ../../kubernetes_files/zookeeper_svc.yaml
 
   - name: Start kafka broker service 0
-    shell: kubectl apply -f /home/cc/CS4287-A3/kafka_0_svc.yaml
+    shell: kubectl apply -f ../../kubernetes_files/kafka_0_svc.yaml
 
   - name: Start kafka broker service 1
-    shell: kubectl apply -f /home/cc/CS4287-A3/kafka_1_svc.yaml
+    shell: kubectl apply -f ../../kubernetes_files/kafka_1_svc.yaml
 
-  - name: Start couchdb service
-    shell: kubectl apply -f /home/cc/CS4287-A3/couchdb_svc.yaml
 
 ...
