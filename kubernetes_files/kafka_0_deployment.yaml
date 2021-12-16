@@ -21,5 +21,5 @@ spec:                     # This is the specification where we can even put the 
                                              # from all our workers
           imagePullPolicy: Always  # This forces the node to pull the image
           command: ["/kafka/bin/kafka-server-start.sh"]
-          args: ["/kafka/config/server.properties", "--override", "listeners=PLAINTEXT://:9092", "--override", "advertised.listeners=PLAINTEXT://129.114.25.94:30000", "--override", "num.partitions=10", "--override", "zookeeper.connect=zookeeper-svc:2181"]  # arguments to run. 
+          args: ["/kafka/config/server.properties", "--override", "listeners=PLAINTEXT://:9092", "--override", "advertised.listeners=PLAINTEXT://129.114.25.94:30000", "--override", "num.partitions=5", "--override", "zookeeper.connect=zookeeper-svc:2181"]  # arguments to run. 
       restartPolicy: Always
