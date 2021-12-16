@@ -9,7 +9,8 @@ Ray tracing is a graphics rendering technique that is powerful but has historica
 *images*: contains some intermediate image frames rendered or used during the testing phase  
 *kubernetes_files*: contains all YAML files for Kubernetes workload resources and services  
 *legacy_code*: contains some Python programs that were initially used in the pipeline  
-*raytracer_files*: contains all necessary files for the ray tracer pods; also contains some additional graphics functionalities beyond ray tracing that are unused in this project  *scripts*: contains all our sample input scripts in addition to some helper Python programs
+*raytracer_files*: contains all necessary files for the ray tracer pods; also contains some additional graphics functionalities beyond ray tracing that are unused in this project  
+*scripts*: contains all our sample input scripts in addition to some helper Python programs
 
 ## Python Files
 *animation_generator.py*: the main program. Runs producerS.py, local_compiler.py, and consumerG.py concurrently.  
