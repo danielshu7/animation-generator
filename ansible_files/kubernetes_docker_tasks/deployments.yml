@@ -1,0 +1,22 @@
+---
+  - name: Zookeeper deployment
+    shell: kubectl apply -f /home/cc/CS4287-A3/zookeeper_deployment.yaml
+  
+  - name: Pause
+    pause:
+         seconds: 30
+
+  - name: Start couchdb
+    shell: kubectl apply -f /home/cc/CS4287-A3/couchdb_statefulset.yaml
+
+  - name: Kafka broker deployment 0
+    shell: kubectl apply -f /home/cc/CS4287-A3/kafka_0_deployment.yaml
+
+  - name: Kafka broker deployment 1
+    shell: kubectl apply -f /home/cc/CS4287-A3/kafka_1_deployment.yaml
+
+  - name: Pause
+    pause:
+         minutes: 1
+
+...

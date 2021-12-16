@@ -1,0 +1,31 @@
+---
+  - name: Create raytracer image
+    shell: docker build -f ../../dockerfile_raytracer -t raytracer .
+
+  - name: Tag
+    shell: docker tag raytracer:latest 129.114.25.94:5000/raytracer
+
+  - name: Push
+    shell: docker push 129.114.25.94:5000/raytracer
+
+
+  - name: Create gif-compiler image
+    shell: docker build -f ../../dockerfile_gif_compiler -t gif-compiler .
+
+  - name: Tag
+    shell: docker tag gif-compiler:latest 129.114.25.94:5000/gif-compiler
+
+  - name: Push
+    shell: docker push 129.114.25.94:5000/gif-compiler
+  
+
+  - name: Create kafka-zookeeper image
+    shell: docker build -f ../../dockerfile_kafka -t kafka_zookeeper .
+
+  - name: Tag
+    shell: docker tag kafka_zookeeper:latest 129.114.25.94:5000/kafka_zookeeper
+
+  - name: Push
+    shell: docker push 129.114.25.94:5000/kafka_zookeeper
+
+...

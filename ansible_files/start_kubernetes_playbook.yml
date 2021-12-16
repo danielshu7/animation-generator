@@ -1,0 +1,68 @@
+---
+  - name: "Play 1: Setting Up Cluster"
+    hosts: MyChameleonVMs
+    remote_user: cc
+    become: yes
+    collections:
+      - openstack.cloud 
+
+    tasks:
+    - include_tasks: kuberenetes_docker_tasks/cluster_setup.yml
+      when: inventory_hostname == ansible_play_hosts[1]
+
+  - name: "Play 2: Add worker"
+    hosts: MyChameleonVMs
+    remote_user: cc
+    become: yes
+    collections:
+      - openstack.cloud
+   
+    tasks: 
+    - include_tasks: kuberenetes_docker_tasks/add_worker.yml
+      when: inventory_hostname == ansible_play_hosts[0]
+    - name: Pause for 20s to allow setup to complete
+      pause:
+           seconds: 20
+
+  - name: "Play 3: Create images"
+    hosts: MyChameleonVMs
+    remote_user: cc
+    become: yes
+    collections:
+      - openstack.cloud
+  
+    tasks:
+    - include_tasks: kuberenetes_docker_tasks/create_image.yml
+      when: inventory_hostname == ansible_play_hosts[1]
+    - name: Wait for 10s
+      pause:
+           seconds: 10
+
+  - name: "Play 4: Start services"
+    hosts: MyChameleonVMs
+    remote_user: cc
+    become: yes
+    collections: 
+      - openstack.cloud
+  
+    tasks:
+    - include_tasks: kuberenetes_docker_tasks/start_services.yml
+      when: inventory_hostname == ansible_play_hosts[1]
+    - name: Wait for 10s
+      pause:
+           seconds: 10
+
+  - name: "Play 5: Start deployments"
+    hosts: MyChameleonVMs
+    remote_user: cc
+    become: yes
+    collections:
+      - openstack.cloud
+
+    tasks:
+    - include_tasks: kuberenetes_docker_tasks/deployments.yml
+      when: inventory_hostname == ansible_play_hosts[1]
+    - include_tasks: kuberenetes_docker_tasks/start_consumer.yml
+      when: inventory_hostname == ansible_play_hosts[1]
+  
+...
