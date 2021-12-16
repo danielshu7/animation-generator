@@ -1,0 +1,8 @@
+---
+  - name: Add hostname for VM2
+    lineinfile:
+         path: /etc/hosts
+         insertafter: "127.0.0.1 localhost"
+         line: "129.114.25.94 team6-ansiblevm2.novalocal team6-ansiblevm2 kubemaster kubeworker1"
+         firstmatch: yes
+...

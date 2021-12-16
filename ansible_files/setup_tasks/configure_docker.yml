@@ -1,0 +1,22 @@
+---
+  - name: Setting docker.service
+    replace:
+         path: /lib/systemd/system/docker.service
+         regexp: "containerd.sock"
+         replace: "containerd.sock --exec-opt native.cgroupdriver=systemd"
+
+  - name: Adding Registry Information
+    copy:
+      dest: "/etc/docker/daemon.json"
+      content: |
+        {
+          "insecure-registries" : ["129.114.25.94:5000"]
+        }
+
+  - name: Reload and Restart
+    systemd:
+         name: docker
+         state: restarted
+         daemon_reload: yes
+...
+
