@@ -20,3 +20,6 @@ Ray tracing is a graphics rendering technique that is powerful but has historica
 *local_compiler.py*: receives image frames from the Kafka service.  After 20 seconds has elapsed with no new frames, compiles the frames into a gif and saves it.  Located on local device.  
 *images_to_gif.py*: receives image frames from the Kafka service.  After 20 seconds has elapsed with no new frames, compiles the frames into a gif and sends it to the Kafka service.  Located in cloud GIF compiler.  
 *consumerG.py*: receives gif from the Kafka service and saves it.  Located on local device.
+
+## Demo Video
+https://studio.youtube.com/channel/UC0lp19qtOG8nbm_UIUK-o1w/videos/upload?filter=%5B%5D&sort=%7B%22columnType%22%3A%22date%22%2C%22sortOrder%22%3A%22DESCENDING%22%7D
